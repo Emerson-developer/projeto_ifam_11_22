@@ -14,3 +14,9 @@ class PokemonSerializer(GetIdFromQuerySet):
     class Meta:
         model = models.Pokemon
         fields = '__all__'
+
+
+class TreinadorSerializer(GetIdFromQuerySet):
+    class Meta:
+        model = models.Treinador
+        fields = '__all__'
