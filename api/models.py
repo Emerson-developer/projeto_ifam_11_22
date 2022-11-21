@@ -89,13 +89,17 @@ class Treinador(models.Model):
         verbose_name = 'Treinador'
         verbose_name_plural = 'Treinadores'
 
-# class Pool(models.Model):
-#
-#     pokemon = models.ForeignKey(
-#         Pokemon,
-#         on_delete=models.CASCADE
-#     )
-#     treinador = models.ForeignKey(
-#         Treinador,
-#         on_delete=models.CASCADE
-#     )
+class Regiao(models.Model):
+    
+    lugar = models.CharField(
+    db_column='tx_lugar',
+    max_length=15,
+    verbose_name='Lugar'
+    )
+    
+    class Meta:
+        managed = True
+        db_table = 'Regiao'
+        verbose_name = 'Regiao'
+        verbose_name_plural = 'Regioes'
+

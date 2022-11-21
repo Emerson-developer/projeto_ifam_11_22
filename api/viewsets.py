@@ -13,4 +13,9 @@ class TreinadorViewSet(viewsets.ModelViewSet):
     queryset = models.Treinador.objects.all()
     serializer_class = serializer.TreinadorSerializer
     ordering_fields = "__all__"
+    
+class RegiaoViewSet(viewsets.ModelViewSet):
+    queryset = models.Regiao.objects.all()
+    serializer_class = serializer.RegiaoSerializer
+    ordering_fields = "__all__"
 

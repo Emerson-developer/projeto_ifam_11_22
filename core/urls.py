@@ -21,6 +21,7 @@ from api import viewsets
 router = DefaultRouter()
 router.register(r'pokemon', viewsets.PokemonViewSet)
 router.register(r'treinador', viewsets.TreinadorViewSet)
+router.register(r'regiao', viewsets.RegiaoViewSet)
 
 
 # The API URLs are now determined automatically by the router.
