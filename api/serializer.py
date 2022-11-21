@@ -20,3 +20,9 @@ class TreinadorSerializer(GetIdFromQuerySet):
     class Meta:
         model = models.Treinador
         fields = '__all__'
+
+
+class PoolSerializer(GetIdFromQuerySet):
+    class Meta:
+        model = models.Pool
+        fields = "__all__"

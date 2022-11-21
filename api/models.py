@@ -51,7 +51,7 @@ class Pokemon(models.Model):
         managed = True
         db_table = 'pokemon'
         verbose_name = 'Pokemon'
-        verbose_name_plural = 'Pokemons'
+        verbose_name_plural = 'Pokemons'        
 
 
 class Treinador(models.Model):
@@ -89,13 +89,14 @@ class Treinador(models.Model):
         verbose_name = 'Treinador'
         verbose_name_plural = 'Treinadores'
 
-# class Pool(models.Model):
-#
-#     pokemon = models.ForeignKey(
-#         Pokemon,
-#         on_delete=models.CASCADE
-#     )
-#     treinador = models.ForeignKey(
-#         Treinador,
-#         on_delete=models.CASCADE
-#     )
+
+class Pool(models.Model):
+
+    pokemon = models.ForeignKey(
+        Pokemon,
+        on_delete=models.CASCADE
+    )
+    treinador = models.ForeignKey(
+        Treinador,
+        on_delete=models.CASCADE
+    )
