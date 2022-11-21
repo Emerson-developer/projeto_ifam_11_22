@@ -26,3 +26,9 @@ class RegiaoSerializer(GetIdFromQuerySet):
         model = models.Regiao
         fields = '__all__'
 
+
+
+class PoolSerializer(GetIdFromQuerySet):
+    class Meta:
+        model = models.Pool
+        fields = "__all__"

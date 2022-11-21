@@ -19,3 +19,8 @@ class RegiaoViewSet(viewsets.ModelViewSet):
     serializer_class = serializer.RegiaoSerializer
     ordering_fields = "__all__"
 
+
+class PoolViewSet(viewsets.ModelViewSet):
+    queryset = models.Pool.objects.all()
+    serializer_class = serializer.PoolSerializer
+    ordering_fields = "__all__"
