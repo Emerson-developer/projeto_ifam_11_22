@@ -1,6 +1,21 @@
 from django.db import models
-
-
+class Regiao(models.Model):
+    
+    lugar = models.CharField(
+    db_column='tx_lugar',
+    max_length=15,
+    verbose_name='Lugar',
+    default="Kanto"
+    )
+    
+    def __str__(self):
+        return self.lugar
+    
+    class Meta:
+        managed = True
+        db_table = 'Regiao'
+        verbose_name = 'Regiao'
+        verbose_name_plural = 'Regioes'
 class Pokemon(models.Model):
     class Tipo(models.TextChoices):
         AGUA = 'Agua', 'Agua'
@@ -46,6 +61,16 @@ class Pokemon(models.Model):
         choices=Sexo.choices,
         verbose_name='Sexo'
     )
+    
+    regiao = models.ForeignKey(
+        Regiao,
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True
+    )
+    
+    def __str__(self):
+        return self.nome
 
     class Meta:
         managed = True
@@ -82,26 +107,23 @@ class Treinador(models.Model):
         choices=Sexo.choices,
         verbose_name='Sexo'
     )
-
+    
+    regiao = models.ForeignKey(
+        Regiao,
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True
+    )
+    
+    def __str__(self):
+        return f"{self.nome}"
+    
     class Meta:
         managed = True
         db_table = 'Treinador'
         verbose_name = 'Treinador'
         verbose_name_plural = 'Treinadores'
 
-class Regiao(models.Model):
-    
-    lugar = models.CharField(
-    db_column='tx_lugar',
-    max_length=15,
-    verbose_name='Lugar'
-    )
-    
-    class Meta:
-        managed = True
-        db_table = 'Regiao'
-        verbose_name = 'Regiao'
-        verbose_name_plural = 'Regioes'
 
 
 class Pool(models.Model):
