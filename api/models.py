@@ -16,6 +16,7 @@ class Regiao(models.Model):
         db_table = 'Regiao'
         verbose_name = 'Regiao'
         verbose_name_plural = 'Regioes'
+
 class Pokemon(models.Model):
     class Tipo(models.TextChoices):
         AGUA = 'Agua', 'Agua'
@@ -124,15 +125,40 @@ class Treinador(models.Model):
         verbose_name = 'Treinador'
         verbose_name_plural = 'Treinadores'
 
+class Pokebola(models.Model):
+    
+    captura = models.CharField(
+        db_column='tx_captura',
+        max_length=10,
+        verbose_name='Captura',
+        default="Red"
+    )
+    
+    def __str__(self):
+     return self.captura
+    
+    class Meta:
+        managed = True
+        db_table = 'Pokebola'
+        verbose_name = 'Pokebola'
+        verbose_name_plural = 'Pokebolas'
+
 
 
 class Pool(models.Model):
 
     pokemon = models.ForeignKey(
         Pokemon,
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+
     )
     treinador = models.ForeignKey(
         Treinador,
         on_delete=models.CASCADE
+    )
+
+    pokebola = models.ForeignKey(
+        Pokebola,
+        on_delete=models.CASCADE,
+        null=True
     )

@@ -32,3 +32,9 @@ class PoolSerializer(GetIdFromQuerySet):
     class Meta:
         model = models.Pool
         fields = "__all__"
+
+
+class PokebolaSerializer(GetIdFromQuerySet):
+    class Meta:
+        model = models.Pokebola
+        fields = '__all__'

@@ -23,7 +23,7 @@ router.register(r'regiao', viewsets.RegiaoViewSet)
 router.register(r'pokemon', viewsets.PokemonViewSet)
 router.register(r'treinador', viewsets.TreinadorViewSet)
 router.register(r'pool', viewsets.PoolViewSet)
-
+router.register(r'pokebola',viewsets.PokebolaViewSet)
 # The API URLs are now determined automatically by the router.
 urlpatterns = [
     path('', include(router.urls)),

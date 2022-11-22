@@ -24,3 +24,8 @@ class PoolViewSet(viewsets.ModelViewSet):
     queryset = models.Pool.objects.all()
     serializer_class = serializer.PoolSerializer
     ordering_fields = "__all__"
+
+class PokebolaViewSet(viewsets.ModelViewSet):
+    queryset = models.Pokebola.objects.all()
+    serializer_class = serializer.PokebolaSerializer
+    ordering_fields = "__all__"    
